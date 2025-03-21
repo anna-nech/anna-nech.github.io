@@ -1,3 +1,10 @@
+.content-container {
+    background-image: url("../images/union-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #F7F7F7;
+    background-size: cover;
+}
 .content-section {
     display: flex;
     flex-wrap: wrap;
@@ -33,8 +40,7 @@
 .image-container img {
     width: 100%;
     height: auto;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: none;
 }
 
 .activity-card {
@@ -66,4 +72,12 @@
 .card img {
     height: 200px;
     object-fit: contain;
+}
+
+.activities {
+    background-color: #EDEDED;
+}
+
+.card {
+    background-color: #EDEDED;
 }
