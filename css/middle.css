@@ -395,3 +395,50 @@ a {
     text-decoration: none;
     color:none;
 }
+
+.contact-form {
+    max-width: 900px;
+    padding: 20px;
+    margin: 40px auto;
+}
+.captcha-text {
+    font-style: italic;
+    font-weight: bold;
+}
+.form-control {
+    width: 70%;
+}
+
+.r-side {
+    width: 100%;
+}
+.footer-section {
+    background-color: #ffff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+.footer-section h4 {
+    color: #57984C;
+    margin-bottom: 10px;
+}
+
+.send-msg-btn {
+    background-color: #57984C; 
+    color: white;
+    font-size: 16px;
+    border: none; 
+    border-radius: 25px;
+    cursor: pointer; 
+    text-align: center;
+    display: inline-block;
+}
+
+.send-msg-btn:hover {
+    background-color: #45a049;
+}
+
+.contant-us-banner {
+    background: url(../images/contant-us-banner.png) center/cover no-repeat;
+
+}

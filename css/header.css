@@ -2,6 +2,10 @@
     background: url(../images/bg.png) center/cover no-repeat;
 }
 
+.header-full-width {
+    width: 100%;
+}
+
 .hero {
     color: #735440;
     text-align: center;
