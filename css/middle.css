@@ -442,3 +442,14 @@ a {
     background: url(../images/contant-us-banner.png) center/cover no-repeat;
 
 }
+
+.eggplant-banner {
+    width: 100%;
+    height: 60vh;
+    background: url('../images/eggplants/bg.png') no-repeat center center;
+    background-size: cover;
+}
+
+.eggplants-all {
+    background-color: #f1d7f6;
+}
