@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eggplant Almaz</title>
+    <title>{{ product.length ? product[0].title : 'Eggplant Details' }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="fonts/robotoslab.css">
@@ -13,101 +13,122 @@
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <div class="container-custom">
-        <div class="d-flex justify-content-between align-items-center py-2">
-            <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo"></a>
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-custom">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="search-bar">
-                        <form class="d-flex" role="search">
-                            <input type="search" placeholder="Search" aria-label="Search">
-                            <button type="button">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
-                                </svg>
-                            </button>
-                        </form>
+    <div id="app">
+        <div class="container-custom">
+            <div class="d-flex justify-content-between align-items-center py-2">
+                <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo"></a>
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-custom">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="search-bar">
+                            <form class="d-flex" role="search">
+                                <input type="search" placeholder="Search" aria-label="Search">
+                                <button type="button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                                    </svg>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Company Profile</a></li>
+                                <li class="nav-item"><a class="nav-link" href="eggplant-all.html">Products</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">R&D</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Company Profile</a></li>
-                            <li class="nav-item"><a class="nav-link" href="eggplant-all.html">Products</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">R&D</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact-us.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-<div class="eggplant-almaz">
-        <div class="container my-5 content-wrapper">
-            <a href="eggplant-all.html" class="text-success">&larr; Return to all eggplants</a>
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h2 class="header-eggplant">Eggplant Almaz</h2>
-                    <h3 class="text-success">High-Yielding Eggplant Variety</h3>
-                    <p class="text-success">*****</p>
-                    <div class="d-flex align-items-center">
-                        <img style="height: 80px; width: auto;" src="images/eggplants/eggplant-logo.png" alt="eggplant logo" class="me-2">
-                        <span style="color: #412c3c;">Very high yield <br> and excellent fruits quality</span>
-                    </div>
-                    <h4 class="separator">CHARACTERISTICS</h4>
-                    <hr class="border-success border-2">
-                    <p><strong>Resistance:</strong><br>Good resistance to common diseases and pests, including fungal infections, bacterial wilt, and nematodes. This variety also exhibits tolerance to adverse weather conditions, ensuring a stable yield even in challenging environments.</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="images/eggplants/almaz.png" alt="Eggplant Almaz" class="img-eggplant rounded">
-                </div>
+                </nav>
             </div>
-            
-            <div class="paired-sections">
-                <div class="paired-row">
-                    <div class="left-column plant-fruit-lists">
-                        <h4 class="separator">Plant</h4>
-                        <hr class="border-success border-2">
-                        <ul>
-                            <li>Strong and vigorous growth.</li>
-                            <li>High productivity and good fruit setting.</li>
-                            <li>Adapted to various climates.</li>
-                        </ul>
+
+            <div class="eggplant-almaz">
+                <div class="container my-5 content-wrapper" v-if="product.length">
+                    <a href="eggplant-all.html" class="text-success">&larr; Return to all eggplants</a>
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <h2 class="header-eggplant">{{ product[0].title }}</h2>
+                            <h3 class="text-success">High-Yielding Eggplant Variety</h3>
+                            <p class="text-success">*****</p>
+                            <div class="d-flex align-items-center">
+                                <img style="height: 80px; width: auto;" src="images/eggplants/eggplant-logo.png" alt="eggplant logo" class="me-2">
+                                <span style="color: #412c3c;">{{ product[0].short_text }}</span>
+                            </div>
+                            <h4 class="separator">CHARACTERISTICS</h4>
+                            <hr class="border-success border-2">
+                            <p><strong>Resistance:</strong><br>Good resistance to common diseases and pests, including fungal infections, bacterial wilt, and nematodes. This variety also exhibits tolerance to adverse weather conditions, ensuring a stable yield even in challenging environments.</p>
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img :src="'images/eggplants/' + product[0].image" :alt="product[0].title" class="img-tomato rounded">
+                        </div>
+                                       
                     </div>
-                    <div class="right-column right-content">
-                        <h4 class="separator">Cycle</h4>
-                        <hr class="border-success border-2">
-                        <ul class="cycle-list">
-                            <li>Spring</li>
-                            <li>Summer</li>
-                            <li>Fall</li>
-                        </ul>
+                    <div class="d-flex justify-content-end">
+                        <a href="#" class="btn btn-outline-success d-inline-flex align-items-center px-3 py-1 rounded-pill border-2" style="border-color: #4CAF50; min-width: 190px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#4CAF50" class="bi bi-file-earmark-pdf me-2" viewBox="0 0 16 16">
+                                <path d="M5.5 12V8h1v1h1V8h1v4h-1v-1H6.5v1h-1zM9.5 12V8h1v3h1V8h1v4h-1v-1h-1v1h-1z"/>
+                                <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6.5L14 4.5zm-1 0L9.5 1.5V4h3z"/>
+                            </svg>
+                            
+<!-- Кнопка для додавання в кошик -->
+<button v-if="btnVisible === 0 && !isAddedToCart" @click="addToCart(product[0].id)">Add to cart</button>
+
+<!-- Кнопка для переходу в кошик -->
+<button v-if="isAddedToCart" @click="goToCart()">Go to cart</button>
+
+
+
+
+                        </a>
+                    </div>  
+                        <div class="paired-sections">
+                            <div class="paired-row">
+                                <div class="left-column plant-fruit-lists">
+                                    <h4 class="separator">Plant</h4>
+                                    <hr class="border-success border-2">
+                                    <ul>
+                                        <li>Strong and vigorous growth.</li>
+                                        <li>High productivity and good fruit setting.</li>
+                                        <li>Adapted to various climates.</li>
+                                    </ul>
+                                </div>
+                                <div class="right-column right-content">
+                                    <h4 class="separator">Cycle</h4>
+                                    <hr class="border-success border-2">
+                                    <ul class="cycle-list">
+                                        <li>Spring</li>
+                                        <li>Summer</li>
+                                        <li>Fall</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="paired-row">
+                                <div class="left-column plant-fruit-lists">
+                                    <h4 class="separator">Fruit</h4>
+                                    <hr class="border-success border-2">
+                                    <ul>
+                                        <li>Deep purple glossy skin.</li>
+                                        <li>Excellent taste and firm flesh.</li>
+                                        <li>Average fruit size: 200 – 250 grams.</li>
+                                    </ul>
+                                </div>
+                                <div class="right-column right-content">
+                                    <h4 class="separator">Color</h4>
+                                    <hr class="border-success border-2">
+                                    <p>Purple</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="paired-row">
-                    <div class="left-column plant-fruit-lists">
-                        <h4 class="separator">Fruit</h4>
-                        <hr class="border-success border-2">
-                        <ul>
-                            <li>Deep purple glossy skin.</li>
-                            <li>Excellent taste and firm flesh.</li>
-                            <li>Average fruit size: 200 – 250 grams.</li>
-                        </ul>
-                    </div>
-                    <div class="right-column right-content">
-                        <h4 class="separator">Color</h4>
-                        <hr class="border-success border-2">
-                        <p>Purple</p>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.47/dist/vue.global.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

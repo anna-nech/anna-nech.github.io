@@ -103,11 +103,13 @@
         <div v-if="products.length" class="row g-3">
             <div class="col-md-4" v-for="p in products" :key="p.id">
                 <div class="tomato-card">
+                    <a :href="'eggplant-one.html#'+p.id">
                     <img :src="'images/eggplants/' + p.image" :alt="p.title">
                     <div class="tomato-info">
                         <h5 style="color: #423f54;">{{ p.title }}</h5>
                         <p style="color: #6b6880;">{{ p.short_text }}</p>
                     </div>
+                </a>
                 </div>
                 <button @click="addItem(p.id)">
                     {{ selectedProducts.includes(p.id) ? "Added" : "Add to Cart" }}
