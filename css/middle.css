@@ -67,7 +67,7 @@
     height: auto;
     border: none;
     text-align: center;
-    background-color: #EDEDED;
+    background-color: #FFFAFA !important;
     padding: 20px;
     border-radius: 5px;
     flex: 1;
@@ -156,10 +156,6 @@ p {
     background-color: #FCF0F0;
 }
 
-.row-card {
-    background-color: #FFFAFA;
-}
-
 .row-card .card {
     background: none;
 }
@@ -182,7 +178,7 @@ p {
 }
 
 .tomato-info {
-    padding: 15px 0;
+    padding: 15px;
 }
 
 .tomato-info h5 {

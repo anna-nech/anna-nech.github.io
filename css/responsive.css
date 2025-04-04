@@ -159,3 +159,162 @@
             max-width: 100%;
         }
     }
+/* Media Query for iPhone 4 (320px width) */
+@media (max-width: 320px) {
+    /* Adjust the header */
+    .header-full-width {
+        padding: 10px 0;
+    }
+
+    .navbar-brand img {
+        max-width: 120px; /* Reduce logo size */
+        height: auto;
+    }
+
+    .navbar-toggler {
+        font-size: 14px; /* Reduce button size */
+    }
+
+    .search-bar input {
+        width: 150px; /* Reduce search bar width */
+        font-size: 12px;
+    }
+
+    /* Navigation Menu */
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-item {
+        margin: 5px 0;
+    }
+
+    /* Content Adjustments */
+    .content-wrapper {
+        padding: 10px;
+    }
+
+    .header-tomato {
+        font-size: 20px; /* Reduce title size */
+    }
+
+    .separator {
+        font-size: 14px;
+    }
+
+    .highlight {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Cards Adjustments */
+    .row-card .col-lg-4,
+    .row-card .col-md-6,
+    .row-card .col-sm-12 {
+        width: 100%; /* Make all cards full width */
+    }
+
+    .card {
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+
+    /* Tomato Product Grid */
+    .tomato-card {
+        width: 100%;
+        text-align: center;
+    }
+
+    .tomato-card img {
+        width: 100%; /* Make images responsive */
+        height: auto;
+    }
+
+    /* Footer Adjustments */
+    footer {
+        padding: 15px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    .social-icons a {
+        font-size: 16px; /* Reduce icon size */
+        margin: 5px;
+    }
+
+    .copyright {
+        font-size: 12px;
+    }
+    .card {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    /* Adjust the card title */
+    .card-title {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* Optimize card text for readability */
+    .card-text {
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: justify;
+        padding: 5px;
+    }
+
+    /* Bold text inside card */
+    .card-text strong {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    /* Adjust card layout */
+    .row-card {
+        background: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ensure card images scale correctly */
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    /* Reduce margin between cards */
+    .card + .card {
+        margin-top: 10px;
+    }
+
+}
