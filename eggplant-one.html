@@ -73,16 +73,10 @@
                                 <path d="M5.5 12V8h1v1h1V8h1v4h-1v-1H6.5v1h-1zM9.5 12V8h1v3h1V8h1v4h-1v-1h-1v1h-1z"/>
                                 <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6.5L14 4.5zm-1 0L9.5 1.5V4h3z"/>
                             </svg>
-                            
-<!-- Кнопка для додавання в кошик -->
-<button v-if="btnVisible === 0 && !isAddedToCart" @click="addToCart(product[0].id)">Add to cart</button>
-
-<!-- Кнопка для переходу в кошик -->
-<button v-if="isAddedToCart" @click="goToCart()">Go to cart</button>
-
-
-
-
+                    <!-- Кнопка для додавання в кошик -->
+                    <button v-if="btnVisible === 0 && !isAddedToCart" @click.prevent="addToCart(product[0].id)">Add to cart</button>
+                    <!-- Кнопка для переходу в кошик -->
+                    <button v-if="isAddedToCart" @click="goToCart()">Go to cart</button>
                         </a>
                     </div>  
                         <div class="paired-sections">
