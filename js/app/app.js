@@ -1,6 +1,7 @@
 import {router} from './router.js';
 import {msg} from './widgets/msg.js';
 import {popup} from './widgets/popup.js';
+import {header} from './widgets/header.js';
 document.addEventListener('DOMContentLoaded', function(){
 	const main = {
 		data() {
@@ -101,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	.use(router)
 	.component('msg',msg)
 	.component('popup',popup)
+	.component('Header',header)
 	.mount('#content')
 });
 
