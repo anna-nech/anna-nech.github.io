@@ -43,6 +43,7 @@ export const campaigns = {
 			if(this.date!="") data.append('date',this.date);
 			if(this.date2!="") data.append('date2',this.date2);
 			self.loader=1;
+
 			axios.post(this.parent.url+"/site/getCampaigns?auth="+this.parent.user.auth,data).then(function(response){
 				self.data = response.data;		
 				self.loader = 0;	
@@ -67,6 +68,7 @@ export const campaigns = {
 			if(campaign!="") data.append('campaign',campaign);
 			if(type!="") data.append('type',type);
 			self.loader=1;
+		
 			axios.post(this.parent.url+"/site/getStatisticsDetails?auth="+this.parent.user.auth,data).then(function(response){
 				self.details = response.data;		
 				self.loader = 0;		
@@ -98,6 +100,10 @@ export const campaigns = {
 				var self = this;
 				var data = self.parent.toFormData(self.parent.formData);
 				axios.post(this.parent.url+"/site/deleteCampaign?auth="+this.parent.user.auth,data).then(function(response){
+					if(response.data.error){
+						self.$refs.header.$refs.msg.alertFun(response.data.error);
+						return;
+					}
 					self.$refs.header.$refs.msg.successFun("Successfully deleted campaign!");
 					self.get();			
 				}).catch(function(error){
@@ -105,6 +111,17 @@ export const campaigns = {
 					self.parent.logout();
 				});		
 			}		
+		},	
+		
+		checkAll:function(prop){	
+			if(this.parent.formData.sites){
+				for(let i in this.parent.formData.sites){
+					this.parent.formData.sites[i].include = prop;
+					
+				}
+			}
+			//this.parent.formData.sites = this.data.items[this.iChart];
+			this.getCampaignChart();
 		}			
 	},		
 	template: `
@@ -121,7 +138,7 @@ export const campaigns = {
 					<a class="btnS" href="#" @click.prevent="parent.formData={};$refs.new.active=1"><i class="fas fa-plus"></i> New</a>
 				</div>
 			</div>	
-			
+					
 			<popup ref="new" :title="(parent.formData && parent.formData.id) ? 'Edit campaign' : 'New campaign'">
 				<div class="form inner-form">
 					<form @submit.prevent="action()" v-if="parent.formData">
@@ -136,7 +153,9 @@ export const campaigns = {
 						</div>							
 					</form>
 				</div>
-			</popup>	
+			</popup>
+
+	
 
 			<div class="table" v-if="data.items!=''">
 				<table>
@@ -156,19 +175,15 @@ export const campaigns = {
 						<tr v-for="(item,i) in data.items">
 							<td class="id">{{item.id}}</td>
 							<td class="id">
-							
+								<toogle v-model="item.published" @update:modelValue="item.published = $event;parent.formData = item;action();" />
 							</td>
 							<td>{{item.title}}</td>
 							<td class="id">
-								<a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,1)">
-									{{item.views}}	
-								</a>					
+								{{item.views}}						
 							</td>
 							<td class="id">
-								<a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,2)">
-									<template v-if="item.clicks">{{item.clicks}}</template>	
-									<template v-if="!item.clicks">0</template>	
-								</a>							
+								<template v-if="item.clicks">{{item.clicks}}</template>	
+								<template v-if="!item.clicks">0</template>								
 							</td>	
 							<td class="id">
 								<a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,3)">
@@ -177,13 +192,10 @@ export const campaigns = {
 								</a>						
 							</td>	
 							<td class="id">
-								<a href="#" @click.prevent="$refs.details.active=1;getDetails(item.id,4)">
-									<template v-if="item.fclicks">{{item.fclicks}}</template>	
-									<template v-if="!item.fclicks">0</template>	
-								</a>						
+								<template v-if="item.fclicks">{{item.fclicks}}</template>	
+								<template v-if="!item.fclicks">0</template>							
 							</td>																
-							<td class="actions">
-							
+							<td class="actions">						
 								<a href="#" @click.prevent="parent.formData = item;del();">
 									<i class="fas fa-trash-alt"></i>
 								</a>							

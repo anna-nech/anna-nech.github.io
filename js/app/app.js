@@ -2,6 +2,7 @@ import {router} from './router.js';
 import {msg} from './widgets/msg.js';
 import {popup} from './widgets/popup.js';
 import {header} from './widgets/header.js';
+import {toogle} from './widgets/toogle.js';
 document.addEventListener('DOMContentLoaded', function(){
 	const main = {
 		data() {
@@ -103,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function(){
 	.component('msg',msg)
 	.component('popup',popup)
 	.component('Header',header)
+	.component('toogle',toogle)
 	.mount('#content')
 });
 
