@@ -34,7 +34,7 @@
 									<ul :class="{active:menu==1}" v-if="parent.user && parent.user.type && parent.user.type=='admin'">
 										<li v-if="menu==1" class="al"><i class="fas fa-times" @click="menu=0"></i></li>
 										<li><router-link :class="{'router-link-active':$route.path.search('campaign')==1}" to="/campaigns"><i class="fas fa-bullhorn"></i> Campaigns</router-link></li>
-										<!--li><router-link :class="{'router-link-active':$route.path.search('user')==1}" to="/users"><i class="fas fa-users"></i> Users</router-link></li-->
+										<li><router-link :class="{'router-link-active':$route.path.search('user')==1}" to="/users"><i class="fas fa-users"></i> Users</router-link></li>
 									</ul>
 
 									<!--ul :class="{active:menu==1}" v-if="parent.user && parent.user.type && parent.user.type!='admin'">
